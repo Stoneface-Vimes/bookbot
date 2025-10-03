@@ -10,3 +10,13 @@ def num_of_chars(text):
         else:
             letter_count[letter.lower()] = 1
     return letter_count
+
+def sorted_dict(letter_count):
+    unsorted_list = []
+    sorted_list = []
+    for letter in letter_count:
+        unsorted_list.append({"char": letter,
+                              "num": letter_count[letter]})
+    # Using a lambda function to sort by the list of dicts by each dicts value
+    return sorted(unsorted_list, key=lambda char: char["num"], reverse=True)
+    
